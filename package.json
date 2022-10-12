@@ -1,0 +1,33 @@
+{
+  "name": "e_commerce_market_place",
+  "version": "1.0.0",
+  "description": "Backend Application for e-commerce market_place where buyers and sellers can buy and sell products.",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "dev": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasimRonaldoE7/e_commerce_market_place.git"
+  },
+  "keywords": [
+    "e-commerce",
+    "sellers",
+    "buyers",
+    "orders"
+  ],
+  "author": "wasim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wasimRonaldoE7/e_commerce_market_place/issues"
+  },
+  "homepage": "https://github.com/wasimRonaldoE7/e_commerce_market_place#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
