@@ -2,8 +2,9 @@ const express = require("express");
 require("dotenv").config();
 require("./database/connection");
 const userRouter = require("./routers/user");
-const buyerRouter=require("./routers/buyer")
-const sellerRouter=require('./routers/seller')
+const buyerRouter = require("./routers/buyer");
+const sellerRouter = require("./routers/seller");
+const {verifyToken} = require("./services/auth");
 var bodyParser = require("body-parser");
 
 const app = express();
@@ -17,9 +18,9 @@ app.use(bodyParser.json());
 
 app.use("/api/auth", userRouter);
 
-app.use("/api/buyer",buyerRouter);
+app.use("/api/buyer", verifyToken, buyerRouter);
 
-app.use("/api/seller",sellerRouter);
+app.use("/api/seller", verifyToken, sellerRouter);
 
 app.listen(port, () => {
 	console.log(`Listening to requests on http://localhost:${port}`);

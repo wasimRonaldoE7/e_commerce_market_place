@@ -27,7 +27,6 @@ router.post("/create-order/:seller_id", async function (req, res) {
 		const result = await createOrders(req.body.data, req.params.seller_id);
 		res.send(result);
 	} catch (err_res) {
-		console.log(err_res,'er')
 		res.status(400).send(err_res);
 	}
 });
