@@ -1,9 +1,10 @@
 const express = require("express");
-require('dotenv').config();
-require('./database/connection');
-const userRouter=require('./routers/user');
-var bodyParser = require('body-parser');
-
+require("dotenv").config();
+require("./database/connection");
+const userRouter = require("./routers/user");
+const buyerRouter=require("./routers/buyer")
+const sellerRouter=require('./routers/seller')
+var bodyParser = require("body-parser");
 
 const app = express();
 const port = process.env.PORT || "5000";
@@ -14,7 +15,11 @@ app.get("/", (req, res) => {
 
 app.use(bodyParser.json());
 
-app.use("/users", userRouter);
+app.use("/api/auth", userRouter);
+
+app.use("/api/buyer",buyerRouter);
+
+app.use("/api/seller",sellerRouter);
 
 app.listen(port, () => {
 	console.log(`Listening to requests on http://localhost:${port}`);

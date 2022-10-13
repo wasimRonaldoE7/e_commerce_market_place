@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const {createUser, login} = require("../services/user");
+const {createUser, login} = require("../services/auth");
 
-router.post("/signup", async function (req, res) {
+router.post("/register", async function (req, res) {
 	try {
 		const result = await createUser(req.body);
 		res.send(result);

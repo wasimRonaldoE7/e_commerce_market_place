@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-const CatelogsSchema = new Schema({
+const orderSchema = new Schema({
+    user_id:String,
 	seller_id: String,
-	name: String,
 	products: {
 		type: [mongoose.ObjectId],
 		ref: "product",
 	},
 });
 
-const CatelogModel = mongoose.model("catelog", CatelogsSchema);
+const OrderModel = mongoose.model("order", orderSchema);
 
-module.exports = CatelogModel;
+module.exports = OrderModel;
