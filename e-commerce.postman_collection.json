@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "3c639f72-2f02-490d-8996-9456396be45a",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19480406"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"shahith\",\n    \"password\":\"shahith\",\n    \"type\":\"seller\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"ajith\",\n    \"password\":\"ajith\",\n    \"type\":\"seller\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM0ODAwYWFiMGYxZTU5N2U4M2UxOWQ5IiwibmFtZSI6InNoYWhpdGgiLCJpYXQiOjE2NjU2NjMxODYsImV4cCI6MTY2NTY2Njc4Nn0._Pyyuo0f26mzZlE_VLQO0kXYrAqRxfgqkG-C1H-BY0k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\":{\"user_id\":\"6348009cb0f1e597e83e19d7\",\n    \"products\":[\"63480110b0f1e597e83e19dd\"]\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/buyer/create-order/6346d61673669deea4d92a2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"buyer",
+						"create-order",
+						"6346d61673669deea4d92a2e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\":{\"user_id\":\"6346c282a0fd6d8181cc4f3b\",\n    \"products\":[\"6347f8de4fd735225518c766\",\"6347f9074fd735225518c76e\"]\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/seller/orders?seller_id=6346d61673669deea4d92a2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"seller",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "seller_id",
+							"value": "6346d61673669deea4d92a2e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get sellers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM0ODAwYWFiMGYxZTU5N2U4M2UxOWQ5IiwibmFtZSI6InNoYWhpdGgiLCJpYXQiOjE2NjU2NjMxODYsImV4cCI6MTY2NTY2Njc4Nn0._Pyyuo0f26mzZlE_VLQO0kXYrAqRxfgqkG-C1H-BY0k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\":{\"user_id\":\"6346c282a0fd6d8181cc4f3b\",\n    \"products\":[\"6347f8de4fd735225518c766\",\"6347f9074fd735225518c76e\"]\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/buyer/list-of-sellers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"buyer",
+						"list-of-sellers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get sellers Catelogue",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM0ODAwYWFiMGYxZTU5N2U4M2UxOWQ5IiwibmFtZSI6InNoYWhpdGgiLCJpYXQiOjE2NjU2NjMxODYsImV4cCI6MTY2NTY2Njc4Nn0._Pyyuo0f26mzZlE_VLQO0kXYrAqRxfgqkG-C1H-BY0k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\":{\"user_id\":\"6346c282a0fd6d8181cc4f3b\",\n    \"products\":[\"6347f8de4fd735225518c766\",\"6347f9074fd735225518c76e\"]\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/buyer/seller-catalog/6346d61673669deea4d92a2e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"buyer",
+						"seller-catalog",
+						"6346d61673669deea4d92a2e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create catelog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjM0ODAwYWFiMGYxZTU5N2U4M2UxOWQ5IiwibmFtZSI6InNoYWhpdGgiLCJpYXQiOjE2NjU2NjMxODYsImV4cCI6MTY2NTY2Njc4Nn0._Pyyuo0f26mzZlE_VLQO0kXYrAqRxfgqkG-C1H-BY0k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"tv\",\n    \"seller_id\":\"6346d61673669deea4d92a2e\",\n    \"items\":[{\n      \"name\":\"onida\",\n      \"price\":20  \n    },{\n        \"name\":\"lg\",\n        \"price\":23\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/seller/create-catalog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"seller",
+						"create-catalog"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
